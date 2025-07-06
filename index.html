@@ -2,161 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Surkhet, Nepal</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-      });
-    }
-    document.addEventListener("DOMContentLoaded", () => switchLang("en"));
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discover Surkhet, Nepal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .lang-np { display: none; }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- Header -->
   <header class="bg-green-700 text-white p-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-      <h1 class="text-3xl font-bold">Explore Surkhet</h1>
-      <nav class="mt-4 md:mt-0 space-x-3">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#attractions" class="hover:underline">Attractions</a>
-        <a href="#culture" class="hover:underline">Culture</a>
-        <a href="#visit" class="hover:underline">Visit</a>
-        <a href="#news" class="hover:underline">News</a>
-        <a href="#map" class="hover:underline">Map</a>
-        <button onclick="switchLang('en')" class="bg-white text-green-700 px-2 py-1 rounded">English</button>
-        <button onclick="switchLang('np')" class="bg-white text-green-700 px-2 py-1 rounded">नेपाली</button>
-      </nav>
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Surkhet.com</h1>
+      <div>
+        <button onclick="switchLang('en')" class="bg-white text-green-700 px-3 py-1 rounded mr-2">EN</button>
+        <button onclick="switchLang('np')" class="bg-white text-green-700 px-3 py-1 rounded">ने</button>
+      </div>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-12 px-6 bg-gray-50">
-    <div class="max-w-4xl mx-auto text-center">
-      <div data-lang="en">
-        <h2 class="text-4xl font-semibold mb-4">Welcome to Surkhet</h2>
-        <p class="text-lg">Surkhet is a beautiful valley and the capital of Karnali Province in western Nepal. Known for its natural beauty and cultural heritage, it serves as a gateway to the remote Himalayas.</p>
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section id="introduction">
+      <h2 class="text-4xl font-bold mb-4">Introduction</h2>
+      <p class="lang-en">Surkhet is a culturally rich valley in western Nepal with a long history and a gateway to Karnali province.</p>
+      <p class="lang-np">सुर्खेत नेपालको पश्चिममा रहेको एक सांस्कृतिक धनी उपत्यका हो जुन कर्णाली प्रदेशको प्रवेशद्वार हो।</p>
+    </section>
+
+    <section id="attractions" class="mt-12">
+      <h2 class="text-3xl font-semibold mb-4">Attractions</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><a href="attractions/kakrebihar.html" class="text-green-700 underline">Kakrebihar Temple</a></li>
+        <li><a href="attractions/bulbule.html" class="text-green-700 underline">Bulbule Lake</a></li>
+        <li><a href="attractions/deuti-bajai.html" class="text-green-700 underline">Deuti Bajai Temple</a></li>
+        <li><a href="attractions/gothikanda.html" class="text-green-700 underline">Gothikanda Viewpoint</a></li>
+      </ul>
+    </section>
+
+    <section id="videos" class="mt-12">
+      <h2 class="text-3xl font-semibold mb-4">Featured Videos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <iframe
+          class="w-full h-64 rounded shadow"
+          src="https://www.youtube.com/embed/xYfK8BQh1P8"
+          title="Surkhet Video"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          class="w-full h-64 rounded shadow"
+          src="https://www.youtube.com/embed/Ya6C0qU9b74"
+          title="Bulbule Lake"
+          allowfullscreen
+        ></iframe>
       </div>
-      <div data-lang="np" class="hidden">
-        <h2 class="text-4xl font-semibold mb-4">सुर्खेतमा स्वागत छ</h2>
-        <p class="text-lg">सुर्खेत नेपालको पश्चिममा अवस्थित कर्णाली प्रदेशको राजधानी हो। प्राकृतिक सौन्दर्य र सांस्कृतिक धरोहरले भरिपूर्ण यो उपत्यका हिमाली भेगको प्रवेशद्वारको रूपमा परिचित छ।</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Attractions -->
-  <section id="attractions" class="py-12 px-6 bg-gray-100">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center" data-lang="en">Top Attractions</h2>
-      <h2 class="text-3xl font-bold mb-6 text-center hidden" data-lang="np">प्रमुख आकर्षणहरू</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Kakrebihar</h3>
-          <p data-lang="en">An ancient Buddhist monastery known for its stone architecture and spiritual tranquility.</p>
-          <p data-lang="np" class="hidden">प्राचीन बुद्ध विहार, ढुङ्गाको वास्तुकलाले सजिएको, शान्त वातावरणमा अवस्थित।</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Bulbule Lake</h3>
-          <p data-lang="en">A serene lake in Surkhet city, surrounded by lush greenery and a recreational park.</p>
-          <p data-lang="np" class="hidden">शान्त सुन्दर ताल, हरियाली र मनोरञ्जन पार्कले घेरिएको।</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Deuti Bajai Temple</h3>
-          <p data-lang="en">A revered temple believed to fulfill wishes of devotees.</p>
-          <p data-lang="np" class="hidden">आस्थाको केन्द्र, मान्यताअनुसार भक्तजनको मनोकामना पूरा हुने मन्दिर।</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Bheri River</h3>
-          <p data-lang="en">Known for rafting and scenic beauty.</p>
-          <p data-lang="np" class="hidden">राफ्टिङ र रमणीय दृश्यहरूको लागि प्रसिद्ध नदी।</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Culture -->
-  <section id="culture" class="py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-center" data-lang="en">Culture & Festivals</h2>
-      <h2 class="text-3xl font-bold mb-4 text-center hidden" data-lang="np">संस्कृति र पर्व</h2>
-      <p class="mb-4" data-lang="en">
-        Surkhet is home to diverse ethnic groups such as Magar, Tharu, Brahmin, and Chhetri. Major festivals include Dashain, Tihar, Maghi, and Holi.
-      </p>
-      <p class="mb-4 hidden" data-lang="np">
-        सुर्खेत विभिन्न जातजातिहरूको साझा बसोबास हो, जस्तै मगर, थारू, ब्राह्मण, क्षेत्री। यहाँ दसैं, तिहार, माघी, होली आदि चाडपर्वहरू विशेष रूपमा मनाइन्छन्।
-      </p>
-    </div>
-  </section>
-
-  <!-- Visit -->
-  <section id="visit" class="py-12 px-6 bg-gray-100">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4" data-lang="en">How to Visit</h2>
-      <h2 class="text-3xl font-bold mb-4 hidden" data-lang="np">यात्रा कसरी गर्ने?</h2>
-      <p class="mb-4" data-lang="en">Surkhet can be reached by direct flight from Kathmandu or by road. Regular buses and local transport are available.</p>
-      <p class="mb-4 hidden" data-lang="np">सुर्खेतमा काठमाडौँबाट सिधा उडान वा सडकमार्गबाट पुग्न सकिन्छ। नियमित बस सेवा तथा स्थानीय यातायात सुविधा उपलब्ध छन्।</p>
-    </div>
-  </section>
-
-  <!-- News -->
-  <section id="news" class="py-12 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-6" data-lang="en">Latest News from Surkhet</h2>
-      <h2 class="text-3xl font-bold text-center mb-6 hidden" data-lang="np">सुर्खेतको ताजा समाचार</h2>
-      <div id="news-container" class="space-y-4 text-left">
-        <p class="text-center">Loading news...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Map -->
-  <section id="map" class="py-12 px-6 bg-gray-100">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4" data-lang="en">Surkhet on the Map</h2>
-      <h2 class="text-3xl font-bold mb-4 hidden" data-lang="np">नक्सामा सुर्खेत</h2>
+    <section id="map" class="mt-12">
+      <h2 class="text-3xl font-semibold mb-4">Surkhet Map</h2>
       <iframe
+        class="w-full h-96 rounded shadow"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.761292428407!2d81.62354891506108!3d28.58803808243444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3997cbdde46f2c1f%3A0x5f1c5ce0f6ac12d7!2sSurkhet%2C%20Nepal!5e0!3m2!1sen!2sus!4v1626265571537"
-        width="100%" height="400" allowfullscreen="" loading="lazy" class="rounded shadow">
-      </iframe>
-    </div>
-  </section>
+      ></iframe>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-green-800 text-white text-center p-6 mt-12">
-    <p data-lang="en">&copy; 2025 Explore Surkhet | Made with ❤️ in Nepal</p>
-    <p data-lang="np" class="hidden">&copy; २०२५ एक्सप्लोर सुर्खेत | नेपालमा बनाइएको</p>
+  <footer class="bg-green-800 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Surkhet.com | Explore the Heart of Karnali</p>
   </footer>
 
-  <!-- News Script -->
   <script>
-    async function loadNews() {
-      const url = 'https://api.rss2json.com/v1/api.json?rss_url=' +
-        encodeURIComponent('https://www.google.com/search?q=surkhet+news+today&hl=en&gl=US&ceid=US:en&output=rss');
-      const container = document.getElementById('news-container');
-
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        container.innerHTML = '';
-
-        data.items.slice(0, 5).forEach(item => {
-          const pubDate = new Date(item.pubDate).toLocaleDateString();
-          container.innerHTML += `
-            <div class="p-4 bg-white rounded shadow">
-              <a href="${item.link}" target="_blank" class="text-xl font-semibold text-green-700 hover:underline">
-                ${item.title}
-              </a>
-              <p class="text-sm text-gray-600">${pubDate}</p>
-              <p>${item.description || ''}</p>
-            </div>`;
-        });
-      } catch (e) {
-        container.innerHTML = '<p class="text-center text-red-600">Could not load news. Please try again later.</p>';
-      }
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-en, .lang-np').forEach(el => (el.style.display = 'none'));
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => (el.style.display = 'block'));
     }
-    loadNews();
+    window.onload = () => switchLang('en');
   </script>
 </body>
 </html>

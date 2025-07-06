@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kakrebihar Temple - Surkhet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .lang-np { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-green-700 text-white p-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Kakrebihar Temple</h1>
+      <div>
+        <button onclick="switchLang('en')" class="bg-white text-green-700 px-3 py-1 rounded mr-2">EN</button>
+        <button onclick="switchLang('np')" class="bg-white text-green-700 px-3 py-1 rounded">ने</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+      <p class="lang-en">Kakrebihar Temple is a 12th-century stone temple located in Surkhet, Nepal. It is a stunning example of Shikhara-style architecture and blends elements of both Hindu and Buddhist traditions.</p>
+      <p class="lang-np">काक्रेविहार मन्दिर सुर्खेत, नेपालमा अवस्थित १२ औं शताब्दीको पत्थरको मन्दिर हो। यो शिखर शैलीको वास्तुकलाको उत्कृष्ट उदाहरण हो जसमा हिन्दू र बौद्ध तत्वहरूको मिश्रण पाइन्छ।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Historical Significance</h2>
+      <p class="lang-en">The temple was built during the reign of the Khasa Kingdom. Though damaged during civil unrest, it has since been restored and is now a major cultural and spiritual site.</p>
+      <p class="lang-np">यो मन्दिर खस राज्यको शासनकालमा निर्माण गरिएको थियो। गृहयुद्धको समयमा क्षति पुगेको भए पनि, पछि पुनःनिर्माण गरिएको छ र अहिले एक प्रमुख सांस्कृतिक र आध्यात्मिक स्थलको रूपमा परिचित छ।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Photos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="../images/kakrebihar.jpg" alt="Kakrebihar Temple" class="rounded shadow" />
+        <img src="../images/kakrebihar2.jpg" alt="Kakrebihar Architecture" class="rounded shadow" />
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Location</h2>
+      <iframe class="w-full h-96 rounded" src="https://www.google.com/maps?q=kakrebihar+surkhet&output=embed"></iframe>
+    </section>
+
+    <div class="mt-12">
+      <a href="../index.html" class="text-green-700 underline">&larr; <span class="lang-en">Back to Home</span><span class="lang-np">गृहपृष्ठमा फर्कनुहोस्</span></a>
+    </div>
+  </main>
+
+  <footer class="bg-green-800 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Surkhet.com</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-en, .lang-np').forEach(el => (el.style.display = 'none'));
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => (el.style.display = 'block'));
+    }
+    window.onload = () => switchLang('en');
+  </script>
+</body>
+</html>

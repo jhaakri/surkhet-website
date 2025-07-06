@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deuti Bajai Temple - Surkhet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .lang-np { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-green-700 text-white p-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Deuti Bajai Temple</h1>
+      <div>
+        <button onclick="switchLang('en')" class="bg-white text-green-700 px-3 py-1 rounded mr-2">EN</button>
+        <button onclick="switchLang('np')" class="bg-white text-green-700 px-3 py-1 rounded">ने</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+      <p class="lang-en">Deuti Bajai Temple is a revered religious site in Surkhet, known for its unique architecture and annual festivals attracting devotees from the region.</p>
+      <p class="lang-np">देउती बजाई मन्दिर सुर्खेतमा एक पूजनीय धार्मिक स्थल हो जुन यसको अनौठो वास्तुकला र वार्षिक चाडपर्वहरूको लागि परिचित छ जसले क्षेत्रका भक्तजनहरूलाई आकर्षित गर्छ।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Festivals and Rituals</h2>
+      <p class="lang-en">Major festivals such as Dashain and Tihar are celebrated here with great enthusiasm. The temple becomes a hub of cultural activities during these times.</p>
+      <p class="lang-np">दशैं र तिहार जस्ता प्रमुख चाडपर्वहरू यहाँ ठूलो उत्साहका साथ मनाइन्छ। यी समयहरूमा मन्दिर सांस्कृतिक गतिविधिहरूको केन्द्र बन्छ।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Photos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="../images/deutibajai.jpg" alt="Deuti Bajai Temple" class="rounded shadow" />
+        <img src="../images/deutibajai2.jpg" alt="Festival at Deuti Bajai" class="rounded shadow" />
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Location</h2>
+      <iframe class="w-full h-96 rounded" src="https://www.google.com/maps?q=deuti+bajai+temple+surkhet&output=embed"></iframe>
+    </section>
+
+    <div class="mt-12">
+      <a href="../index.html" class="text-green-700 underline">&larr; <span class="lang-en">Back to Home</span><span class="lang-np">गृहपृष्ठमा फर्कनुहोस्</span></a>
+    </div>
+  </main>
+
+  <footer class="bg-green-800 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Surkhet.com</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-en, .lang-np').forEach(el => (el.style.display = 'none'));
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => (el.style.display = 'block'));
+    }
+    window.onload = () => switchLang('en');
+  </script>
+</body>
+</html>

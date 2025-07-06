@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bulbule Lake - Surkhet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .lang-np { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-green-700 text-white p-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Bulbule Lake</h1>
+      <div>
+        <button onclick="switchLang('en')" class="bg-white text-green-700 px-3 py-1 rounded mr-2">EN</button>
+        <button onclick="switchLang('np')" class="bg-white text-green-700 px-3 py-1 rounded">ने</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+      <p class="lang-en">Bulbule Lake is a beautiful natural spring located in the heart of Birendranagar, Surkhet. It is a popular recreational spot for locals and tourists.</p>
+      <p class="lang-np">बुलबुले ताल सुर्खेतको वीरेन्द्रनगरको मुटुमा अवस्थित एक सुन्दर प्राकृतिक मुहान हो। यो स्थान स्थानीयवासी र पर्यटकहरूका लागि रमणीय गन्तव्य हो।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">What to Expect</h2>
+      <p class="lang-en">Visitors can enjoy boating, walking trails, and local food stalls around the lake. The tranquil atmosphere makes it an ideal place to relax and connect with nature.</p>
+      <p class="lang-np">पर्यटकहरूले ताल वरिपरि डुङ्गा सयर, हिँडडुल मार्ग र स्थानीय खानाका स्टलहरू मजा लिन सक्छन्। शान्त वातावरणले यो स्थानलाई विश्राम र प्रकृतिसँग नजिक हुन उत्कृष्ट बनाउँछ।</p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Photos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="../images/bulbule.jpg" alt="Bulbule Lake" class="rounded shadow" />
+        <img src="../images/bulbule2.jpg" alt="Bulbule Spring" class="rounded shadow" />
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Location</h2>
+      <iframe class="w-full h-96 rounded" src="https://www.google.com/maps?q=bulbule+lake+surkhet&output=embed"></iframe>
+    </section>
+
+    <div class="mt-12">
+      <a href="../index.html" class="text-green-700 underline">&larr; <span class="lang-en">Back to Home</span><span class="lang-np">गृहपृष्ठमा फर्कनुहोस्</span></a>
+    </div>
+  </main>
+
+  <footer class="bg-green-800 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Surkhet.com</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-en, .lang-np').forEach(el => (el.style.display = 'none'));
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => (el.style.display = 'block'));
+    }
+    window.onload = () => switchLang('en');
+  </script>
+</body>
+</html>
